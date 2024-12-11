@@ -1,9 +1,3 @@
-"""
-Contraintes :
-chaque action ne peut être achetée qu'une seule fois
-Nous ne pouvons pas acheter une fraction d'action
-Nous pouvons dépenser au maximum 500€ par client
-"""
 import pandas as pd
 from itertools import combinations
 
@@ -48,6 +42,3 @@ if best_combination:
     print(f"\nProfit total: {max_profit:.2f}€")
 else:
     print("Aucune combinaison valide trouvée.")
-
-
-
