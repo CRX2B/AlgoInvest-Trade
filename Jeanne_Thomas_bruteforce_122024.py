@@ -8,7 +8,7 @@ actions_data['Coût par action (en euros)'] = actions_data['Coût par action (en
 actions_data['Bénéfice (après 2 ans)'] = actions_data['Bénéfice (après 2 ans)'].str.rstrip('%').astype(float) / 100
 actions_data['Profit total'] = actions_data['Coût par action (en euros)'] * (1 + actions_data['Bénéfice (après 2 ans)']) - actions_data['Coût par action (en euros)']
 
-def brute_force_optimise(data, budget):    
+def brute_force(data, budget):    
     best_profit = 0
     best_combination = []
     
@@ -28,7 +28,7 @@ def brute_force_optimise(data, budget):
     return best_combination, best_profit
 
 budget_limit = 500
-best_combination, max_profit = brute_force_optimise(actions_data, budget_limit)
+best_combination, max_profit = brute_force(actions_data, budget_limit)
 
 if best_combination:
     print("\nMeilleure combinaison trouvée :")
